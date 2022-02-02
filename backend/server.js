@@ -1,9 +1,11 @@
 //imports
 const app = require("./app");
-
+const os = require("os");
 const connectDatabase = require("./config/database");
 const cors = require("cors");
 
+const hostname = os.hostname();
+console.log(hostname);
 const corsOptions = {
   origin: "*",
   credentials: true, //access-control-allow-credentials:true
@@ -21,5 +23,5 @@ connectDatabase();
 
 //backend server listening on 4000 Port
 app.listen(process.env.PORT, () => {
-  console.log(`server is running on https://localhost:${process.env.PORT}`);
+  console.log(`server is running on http://localhost:${process.env.PORT}`);
 });
