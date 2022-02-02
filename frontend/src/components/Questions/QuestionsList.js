@@ -2,22 +2,22 @@ import React from "react";
 import "./QuestionList.css";
 import Question from "./Question";
 import { useState, useEffect } from "react";
-;
 const QuestionsList = () => {
   const [data, setdata] = useState([]);
-  const fetchData = async () => {
-    var x = await fetch("http://localhost:4000/api/v1/post");
-    var parsedData = await x.json();
 
-    setdata(parsedData.posts);
-  };
   useEffect(() => {
+    const host = window.location.hostname;
+    const fetchData = async () => {
+      var x = await fetch(`http://${host}:4000/api/v1/post`);
+      var parsedData = await x.json();
+
+      setdata(parsedData.posts);
+    };
     fetchData();
   }, []);
 
   return (
     <>
-
       <div className="container">
         <h2 className="heading-mid currentAffairs mt-3 pt-3">
           Current Affairs!!{" "}
