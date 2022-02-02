@@ -21,5 +21,5 @@ connectDatabase();
 
 //backend server listening on 4000 Port
 app.listen(process.env.PORT, () => {
-  console.log(`server is running on http://localhost:${process.env.PORT}`);
+  console.log(`server is running on https://localhost:${process.env.PORT}`);
 });
