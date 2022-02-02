@@ -8,9 +8,8 @@ const QuestionsList = () => {
   useEffect(() => {
 
     const fetchData = async () => {
-      var x = await fetch(`https://desiretolearn.herokuapp.com/api/v1/post`);
+      var x = await fetch('https://desiretolearn.herokuapp.com/api/v1/post');
       var parsedData = await x.json();
-      console.log("Data is" + parsedData.posts);
       setdata(parsedData.posts);
     };
     fetchData();
