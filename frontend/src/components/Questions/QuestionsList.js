@@ -6,9 +6,9 @@ const QuestionsList = () => {
   const [data, setdata] = useState([]);
 
   useEffect(() => {
-    const host = window.location.hostname;
+
     const fetchData = async () => {
-      var x = await fetch(`http://${host}:4000/api/v1/post`);
+      var x = await fetch(`https://desiretolearn.herokuapp.com/api/v1/post`);
       var parsedData = await x.json();
       console.log("Data is" + parsedData.posts);
       setdata(parsedData.posts);

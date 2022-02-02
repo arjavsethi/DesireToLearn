@@ -1,11 +1,9 @@
 //imports
 const app = require("./app");
-const os = require("os");
+
 const connectDatabase = require("./config/database");
 const cors = require("cors");
 
-const hostname = os.hostname();
-console.log(hostname);
 const corsOptions = {
   origin: "*",
   credentials: true, //access-control-allow-credentials:true
